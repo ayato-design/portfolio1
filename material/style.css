@@ -105,7 +105,7 @@ nav ul li:last-child::after {
 }
 .about_text h3{
     font-size: 36px;
-    font-family: Lora;
+    font-family: "Noto Serif JP", serif;
     padding: 0 0 20px 0;
 }
 
