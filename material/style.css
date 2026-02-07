@@ -19,7 +19,7 @@ body{
 
 /* リンク */
 a:link,a:active,a:visited,a:hover{
-color:#000000;
+    color:#000000;
 }
 a:hover{color:#cccccc;}
 
@@ -36,24 +36,24 @@ nav{
 }
 .header h1{
     font-size: 32px;
-     font-family: "Noto Serif JP", serif;
+    font-family: "Noto Serif JP", serif;
 }
 nav ul{
-  display: flex;
-  justify-content: flex-end; /* 左寄せ */
-  align-items: center;
-  list-style: none;
+    display: flex;
+    justify-content: flex-end; /* 左寄せ */
+    align-items: center;
+    list-style: none;
 }
 nav li{
-  display: inline;
+    display: inline;
 }
 nav ul li::after {
-  content: "|";
-  margin: 0 5px;
-  color: #000000;
+    content: "|";
+    margin: 0 5px;
+    color: #000000;
 }
 nav ul li:last-child::after {
-  content: "";
+    content: "";
 }
 
 /* ヒーローエリア */
@@ -186,7 +186,7 @@ nav ul li:last-child::after {
     color: #000000;
 }
 .works_text ul li:last-child::after {
-     content: "";
+    content: "";
 }
 
 /* フッター */
