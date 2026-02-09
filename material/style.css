@@ -18,10 +18,12 @@ body{
 }
 
 /* リンク */
-a:link,a:active,a:visited,a:hover{
+a:link,a:active,a:visited {
     color:#000000;
 }
-a:hover{color:#cccccc;}
+a:hover{
+    color:#cccccc;
+}
 
 /* ヘッダー/ナビ */
 header, nav{
