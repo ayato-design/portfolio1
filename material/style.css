@@ -207,7 +207,7 @@ footer{
 /* レスポンシブ */
 @media screen and (max-width: 1024px) {
 
-    /* 固定高さを解除して自然な高さに */
+    /* 固定高さ解除 */
     .hero, .hero_text, .about, .skill, .works, footer {
         height: auto;
     }
@@ -221,7 +221,7 @@ footer{
         padding: 0 0 20px 0;
     }
 
-    /* About セクション */
+    /* About */
     .about_box {
         flex-direction: column;
         text-align: center;
@@ -236,7 +236,7 @@ footer{
         margin-bottom: 20px;
     }
 
-    /* Skill セクション */
+    /* Skill */
     .skill_bigbox {
         flex-direction: column;
         width: 100%;
@@ -256,7 +256,7 @@ footer{
         font-size: 28px;
     }
 
-    /* Works セクション */
+    /* Works */
     .works_box {
         flex-direction: column;
         text-align: center;
@@ -282,18 +282,19 @@ footer{
         font-size: 25px;
         margin: 10px 0;
     }
+
+        /* footer */
     footer{
         height: 50px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    /* 全体の文字サイズを少し調整 */
     body {
         font-size: 13px;
     }
 
-    /* 固定高さを解除して自然な高さに */
+    /* 固定高さ解除 */
     .hero, .hero_text, .about, .skill, .works, footer {
         height: auto;
     }
@@ -307,7 +308,7 @@ footer{
         padding: 0 0 20px 0;
     }
 
-    /* About セクション */
+    /* About */
     .about_box {
         flex-direction: column;
         text-align: center;
@@ -323,7 +324,7 @@ footer{
         margin-bottom: 20px;
     }
 
-    /* Skill セクション */
+    /* Skill */
     .skill_bigbox {
         flex-direction: column;
         width: 100%;
@@ -343,7 +344,7 @@ footer{
         font-size: 28px;
     }
 
-    /* Works セクション */
+    /* Works */
     .works_box {
         flex-direction: column;
         text-align: center;
@@ -370,6 +371,8 @@ footer{
         font-size: 18px;
         margin: 10px 0;
     }
+
+    /* footer */
     footer{
         font-size: 10px;
         height: 50px;
