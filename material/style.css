@@ -7,9 +7,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Orbitron:wght@400..900&display=swap');
 
 /* 全体 */
-body{
+body {
     font-size: 16px;
     font-family: "Noto Sans JP", sans-serif;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
 }
 
 /* 戻るボタン */
@@ -49,42 +54,37 @@ body{
 }
 
 /* 画像角丸処理 */
-.about_image img, .skill_image img{
+.about_image img, .skill_image img {
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
     width:  300px;       /* ※縦横を同値に */
     height: 300px;       /* ※縦横を同値に */
 }
 
 /* リンク */
-a:link,a:active,a:visited {
+a {
     color:#000000;
 }
-a:hover{
+a:hover {
     color:#cccccc;
 }
 
 /* ヘッダー/ナビ */
-header, nav{
+header {
     background: #6B8F71;
     color: #000000;
-}
-nav{
     padding: 10px;
 }
-.header{
-    padding: 10px;
-}
-.header h1{
+.header h1 {
     font-size: 32px;
     font-family: "Noto Serif JP", serif;
 }
-nav ul{
+nav ul {
     display: flex;
     justify-content: flex-end; /* 左寄せ */
     align-items: center;
     list-style: none;
 }
-nav li{
+nav li {
     display: inline;
 }
 nav ul li::after {
@@ -97,13 +97,8 @@ nav ul li:last-child::after {
 }
 
 /* ヒーローエリア */
-.hero{
+.hero {
     width: 100%;
-}
-.hero img{
-    max-width: 100%;
-    height: auto;
-    vertical-align: bottom;
 }
 .hero_text_box {
     display: flex;
@@ -117,18 +112,24 @@ nav ul li:last-child::after {
     justify-content: center;
     align-items: center;
 }
-.hero_text{
+.hero_text {
     background: #cccccc;
     height: 200px;
 }
-.hero_text h2{
+.hero_text h2 {
     font-size: 40px;
     font-family: "Noto Serif JP", serif;
     margin: 0 0 20px 0;
 }
 
+/* 共通見出(h3) */
+h3 {
+    font-size: 36px;
+    font-family: "Noto Serif JP", serif;
+}
+
 /* About */
-.about{
+.about {
     background: #E6E6E6;
     height: 400px;
     display: flex;
@@ -140,17 +141,15 @@ nav ul li:last-child::after {
     gap: 2rem;
     align-items: center;
 }
-.about_text{
+.about_text {
     line-height: 30px;
 }
-.about_text h3{
-    font-size: 36px;
-    font-family: "Noto Serif JP", serif;
+.about_text h3 {
     padding: 0 0 20px 0;
 }
 
 /* Skill */
-.skill{
+.skill {
     background: #cccccc;
     height: 700px;
     display: flex;
@@ -164,39 +163,35 @@ nav ul li:last-child::after {
     width: 80%; /* ← ここ重要！親幅を決める */
     margin: 0 auto; /* 中央寄せ */
 }
-.skill_box{
+.skill_box {
     width: 300px;
 }
-.skill_text{
+.skill_text {
     line-height: 25px;
     text-align: center;
 }
-.skill_text h3{
-    font-size: 36px;
-    font-family: "Noto Serif JP", serif;
+.skill_text h3 {
     margin: 20px 0;
 }
-.skill_back{
+.skill_back {
     display:block;
     margin: 0 50px;
 }
 
 /* works */
-.works{
+.works {
     background: #E6E6E6;
     height: 700px;
     display: flex;
     justify-content: center; /* 左右中央 */
     align-items: center;     /* 上下中央 */
 }
-.works_image img{
+.works_image img {
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
     width:  400px;       /* ※縦横を同値に */
     height: 400px;       /* ※縦横を同値に */
 }
-.works_text h3{
-    font-size: 32px;
-    font-family: "Noto Serif JP", serif;
+.works_text h3 {
     margin: 20px 0;
 }
 .works_box {
@@ -204,20 +199,20 @@ nav ul li:last-child::after {
     gap: 2rem;
     align-items: center;
 }
-.works_text{
+.works_text {
     line-height: 25px;
 }
-.works_text p{
+.works_text p {
     padding-bottom: 20px;
 }
-.works_text ul{
+.works_text ul {
     display: flex;
     align-items: center;
     list-style: none;
     margin-top: -20px;
     margin-bottom: 20px;
 }
-.works_text ul li{
+.works_text ul li {
     display: inline;
 }
 .works_text ul li::after {
@@ -230,7 +225,7 @@ nav ul li:last-child::after {
 }
 
 /* フッター */
-footer{
+footer {
     background: #6B8F71;
     color: #000000;
     height: 100px;
@@ -336,11 +331,6 @@ footer{
         font-size: 13px;
     }
 
-    /* 固定高さ解除 */
-    .hero, .hero_text, .about, .skill, .works, footer {
-        height: auto;
-    }
-
     /* 戻るボタン */
     .back_button {
     width: 80px;
@@ -353,80 +343,19 @@ footer{
         font-size: 18px;
         padding: 20px 0 0 0;
     }
-    .hero_text p{
-        padding: 0 0 20px 0;
-    }
 
     /* About */
-    .about_box {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
-    }
-    .about_image img {
-        width: 200px;
-        height: 200px;
-        margin-top: 20px;
-    }
-    .about_text{
+    .about_text {
         margin: 0 5%;
-        margin-bottom: 20px;
-    }
-
-    /* Skill */
-    .skill_bigbox {
-        flex-direction: column;
-        width: 100%;
-        gap: 3rem;
-        text-align: center;
-        margin: 20px 0;
-    }
-    .skill_box {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .skill_image img {
-        width: 200px;
-        height: 200px;
-    }
-    .skill_text h3 {
-        font-size: 28px;
     }
 
     /* Works */
-    .works {
-        height: auto;
-        padding: 20px 5%;
-    }
-    .works ul {
-        flex-direction: column;
-    }
-    .works ul li::after {
-        content: "";
-    }
-    nav ul li:last-child::after {
-        content: "";
-    }
-    .works_box {
-        flex-direction: column;
-        align-items: center;
-    }
-    .works_image img {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 20px;
-    }
-    .works_text {
-        text-align: center;
-    }
     .works_text h3 {
         font-size: 18px;
-        margin: 10px 0;
     }
 
     /* footer */
     footer{
         font-size: 10px;
-        height: 50px;
     }
 }
