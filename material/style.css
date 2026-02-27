@@ -60,14 +60,6 @@ img {
     height: 300px;       /* ※縦横を同値に */
 }
 
-/* リンク */
-a {
-    color:#000000;
-}
-a:hover {
-    color:#cccccc;
-}
-
 /* ヘッダー/ナビ */
 header {
     background: #6B8F71;
@@ -78,22 +70,31 @@ header {
     font-size: 32px;
     font-family: "Noto Serif JP", serif;
 }
-nav ul {
+.pc_nav ul {
     display: flex;
     justify-content: flex-end; /* 左寄せ */
     align-items: center;
     list-style: none;
 }
-nav li {
+.pc_nav li {
     display: inline;
 }
-nav ul li::after {
+.pc_nav ul li::after {
     content: "|";
     margin: 0 5px;
     color: #000000;
 }
-nav ul li:last-child::after {
+.pc_nav ul li:last-child::after {
     content: "";
+}
+.pc_nav a {
+    color:#000000;
+}
+.pc_nav a:hover {
+    color:#cccccc;
+}
+.sm_nav {
+    display: none;
 }
 
 /* ヒーローエリア */
@@ -214,6 +215,12 @@ h3 {
 .works_text ul li:last-child::after {
     content: "";
 }
+.works a {
+    color:#000000;
+}
+.works a:hover {
+    color:#cccccc;
+}
 
 /* フッター */
 footer {
@@ -233,6 +240,92 @@ footer {
     /* ヘッダー */
     .header h1 {
         padding-bottom: 10px;
+    }
+
+    /* ハンバーガーメニュー */
+    .pc_nav {
+        display: none;
+    }
+    .sm_nav {
+        display: block;
+    }
+    .sm_nav_check {
+        display: none;
+    }
+    .sm_nav_open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        z-index: 100;/* 重なり順を一番上にする */
+        cursor: pointer;
+    }
+    .sm_nav_open span, .sm_nav_open span:before, .sm_nav_open span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background: #FFFFFF;
+        transition: 0.5s;
+        position: absolute;
+    }
+    .sm_nav_open span:before {
+        bottom: 8px; /* 三本線の一番上の棒の位置調整 */
+    }
+    .sm_nav_open span:after {
+        top: 8px; /* 三本線の一番下の棒の位置調整 */
+    }
+    #sm_nav_input:checked ~ .sm_nav_open span {
+        background: rgb(255, 255, 255, 0); /* アイコンがクリックされたら真ん中の線を透明にする */
+    }
+    #sm_nav_input:checked ~ .sm_nav_open span::before {
+        bottom: 0;
+        transform: rotate(45deg); /* アイコンがクリック後上下の線を回転 */
+    }
+    #sm_nav_input:checked ~ .sm_nav_open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+    /* メニューのデザイン*/
+    .sm_nav_box {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        bottom: 100%;
+        left: 0%; /* メニューを画面の外に飛ばす */
+        z-index: 99;
+        background: #E6E6E6;
+        transition: .5s;
+        list-style: none;
+    }
+    .sm_nav_menu {
+        display: block;
+        flex-direction: column;
+    }
+    .sm_nav_menu {
+        padding: 0 5%;
+        margin-top: 100px;
+    }
+    .sm_nav_menu li {
+        text-align: center;
+        border-top: 1px solid #000000;
+        padding: 30px;
+    }
+    .sm_nav_menu li:last-child {
+        border-bottom: 1px solid #000000;
+    }
+    .sm_nav_menu a {
+    color: #000000;
+    text-decoration: none;
+    }
+
+    /* アイコンがクリックされたらメニューを表示 */
+    #sm_nav_input:checked ~ .sm_nav_box {
+    bottom: 0;/* メニューを画面に入れる */
     }
 
     /* ヒーローエリア */
@@ -289,7 +382,7 @@ footer {
 
     /* Works */
     .works {
-    padding: 0 5%;
+        padding: 0 5%;
     }
     .works ul {
         flex-direction: column;
@@ -318,8 +411,8 @@ footer {
         margin: 10px 0;
     }
 
-        /* footer */
-    footer{
+    /* footer */
+    footer {
         height: 50px;
     }
 }
@@ -337,10 +430,5 @@ footer {
     .works_text h3 {
         font-size: 22px;
         margin: 10px 0;
-    }
-
-        /* footer */
-    footer{
-        height: 50px;
     }
 }
