@@ -12,13 +12,25 @@
     <script src="material/java.js"></script>
 <header class="header" id="top">
     <h1 id="top">Profile Website</h1>
-    <nav>
+    <div class="pc_nav">
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#works">Works</a></li>
+            <li><a href="#works">Works</a></li> 
         </ul>
-    </nav>
+    </div>
+    <!-- ハンバーガーメニュー/レスポンシブのみ -->
+     <div class="sm_nav">
+        <input id="sm_nav_input" class="sm_nav_check" type="checkbox">
+        <label for="sm_nav_input" class="sm_nav_open"><span></span></label>
+        <nav class="sm_nav_box">
+            <ul class="sm_nav_menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#works">Works</a></li> 
+            </ul>
+        </nav>
+    </div>
 </header>
 <section class="hero">
     <img src="material/hero.png" width="100%" art="ヒーロー画像">
