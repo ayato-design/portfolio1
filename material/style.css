@@ -226,6 +226,7 @@ h3 {
 footer {
     background: #6B8F71;
     color: #000000;
+    font-size: 12px;
     height: 100px;
     text-align: center;
     display: flex;
@@ -432,3 +433,4 @@ footer {
         margin: 10px 0;
     }
 }
+
