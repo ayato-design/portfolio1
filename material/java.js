@@ -33,7 +33,3 @@ $(document).ready(function () {
         return false;
     });
 });
-    // スクロールイベント（負荷軽減も可）
-    $(window).on('scroll', handleScroll);
-    handleScroll(); // 初回チェック
-  });
