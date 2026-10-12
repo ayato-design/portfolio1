@@ -9,6 +9,17 @@ body {
     font-size: 14px;
     font-family: "Noto Sans JP", sans-serif;
 }
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: #E6E6E6;
+}
+body::-webkit-scrollbar-thumb {
+    background: #E6E6E6;
+    border-radius:10px;
+    box-shadow: inset 0px 0px 0px 1px #6B8F71;
+}
 p {
     line-height: 1.5;
 }
@@ -424,9 +435,9 @@ footer {
 
     /* 戻るボタン */
     .back_button {
-    right: 10px;
-    bottom: 10px;
-}
+        right: 10px;
+        bottom: 10px;
+    }
 
     /* ヒーローエリア */
     .hero_text h2 {
