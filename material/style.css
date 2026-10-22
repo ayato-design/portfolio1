@@ -25,7 +25,7 @@ img {
     text-align: center;
     width: 60px;
     height: 60px;
-    border-radius: 50%;
+    border-radius: 20%;
     background: #6B8F71;
     position: fixed;
     right: 20px;
@@ -51,6 +51,42 @@ img {
 .back_button.is-show {
     opacity: 1; /* 表示 */
     transform: translateY(0);
+}
+
+/* 共通見出し */
+h3 {
+    font-size: 32px;
+    font-family: "Noto Serif JP", serif;
+}
+
+/* 共通パーツ */
+.top_content {
+    padding: 0 15%;
+}
+.main_content {
+    padding-top: 30px;
+}
+.main_content_end {
+    padding: 30px 0;
+}
+.main_text {
+    padding-top: 10px;
+}
+.normal_list { /* 斜線横並びリスト */
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.normal_list li {
+    padding-top: 5px;
+}
+.normal_list li::after {
+    color: #000000;
+    content: "/";
+    margin: 0 5px;
+}
+.normal_list li:last-child::after {
+    content: "";
 }
 
 /* 画像角丸処理 */
@@ -98,16 +134,14 @@ header {
 }
 
 /* ヒーローエリア */
-.hero {
+.hero, .hero img {
     width: 100%;
 }
 .hero_text {
     background: #cccccc;
-    padding: 0 15%;
 }
 .hero_text_box {
     text-align: center;
-    padding: 50px 0;
 }
 .hero_text h2 {
     font-size: 40px;
@@ -115,112 +149,69 @@ header {
     margin: 0 0 20px 0;
 }
 
-/* 共通見出(h3) */
-h3 {
-    font-size: 32px;
-    font-family: "Noto Serif JP", serif;
-}
-
 /* About */
 .about {
     background: #E6E6E6;
-    display: flex;
-    justify-content: center; /* 左右中央 */
-    padding: 0 15%;
 }
 .about_box {
     display: flex;
-    gap: 2rem;
+    justify-content: center; /* 左右中央 */
     align-items: center;
-    padding: 50px 0;
-}
-.about_text {
-    line-height: 30px;
+    gap: 30px;
 }
 .about_text h3 {
-    padding: 0 0 20px 0;
+    padding-bottom: 20px;
 }
 
 /* Skill */
 .skill {
     background: #cccccc;
-    display: flex;
 }
 .skill_bigbox {
     display: flex;
     justify-content: space-between; /* 均等配置 */
     align-items: stretch;
-    width: 80%;
     margin: 0 auto; /* 中央寄せ */
-    padding: 50px 0;
 }
 .skill_box {
     width: 300px;
 }
 .skill_text {
-    line-height: 25px;
     text-align: center;
 }
 .skill_text h3 {
     margin: 20px 0;
 }
-.skill_back {
-    display:block;
-    margin: 0 50px;
-}
 
 /* works */
 .works {
     background: #E6E6E6;
+}
+.works_box {
     display: flex;
-    justify-content: center; /* 左右中央 */
-    align-items: center;     /* 上下中央 */
-    padding: 0 15%;
+    gap: 30px;
+    align-items: center;
+}
+.works_text h3 {
+    margin: 20px 0;
+}
+.works_text h4 {
+    font-weight: normal;
+    display: inline-block;
+    border: 1px solid #000000;
+    padding: 5px;
+    margin-top: 15px;
+}
+.works_text a {
+    color:#000000;
+}
+.works_text a:hover {
+    color:#cccccc;
 }
 .works_image img {
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
     width:  350px;       /* ※縦横を同値に */
     height: 350px;       /* ※縦横を同値に */
-}
-.works_text h3 {
-    margin: 20px 0;
-}
-.works_box {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    padding: 50px 0;
-}
-.works_text {
-    line-height: 25px;
-}
-.works_text p {
-    padding-bottom: 20px;
-}
-.works_text ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style: none;
-    margin-top: -20px;
-    margin-bottom: 20px;
-}
-.works_text ul li {
-    display: inline;
-}
-.works_text ul li::after {
-    content: "/";
-    margin: 0 5px;
-    color: #000000;
-}
-.works_text ul li:last-child::after {
-    content: "";
-}
-.works a {
-    color:#000000;
-}
-.works a:hover {
-    color:#cccccc;
 }
 
 /* フッター */
@@ -238,6 +229,11 @@ footer {
 
 /* レスポンシブ */
 @media screen and (max-width: 1024px) {
+    
+    /* 共通パーツ */
+    .top_content {
+        padding: 0 5%;
+    }
 
     /* ヘッダー */
     .header h1 {
@@ -331,44 +327,29 @@ footer {
     }
 
     /* ヒーローエリア */
-    .hero_text {
-        padding: 0 5%;
-    }
-    .hero_text_box {
-        padding: 30px 0;
-    }
     .hero_text h2 {
         font-size: 25px;
         font-family: "Noto Serif JP", serif;
     }
 
     /* About */
-    .about {
-        padding: 0 5%;
-    }
     .about_box {
         flex-direction: column;
         text-align: center;
-        gap: 1.5rem;
-        padding: 30px 0;
     }
     .about_image img {
         width: 200px;
         height: 200px;
         padding-top: 20px;
     }
-    .about_text{
-        margin-bottom: 0px;
-    }
 
     /* Skill */
     .skill_bigbox {
         flex-direction: column;
         width: 100%;
-        gap: 3rem;
         text-align: center;
+        gap: 30px;
         margin: 0;
-        padding: 30px 0;
     }
     .skill_box {
         width: 90%;
@@ -383,27 +364,9 @@ footer {
     }
 
     /* Works */
-    .works {
-        padding: 0 5%;
-    }
-    .works ul {
-        flex-direction: column;
-    }
-    .works ul li::after {
-        content: "";
-    }
-    nav ul li:last-child::after {
-        content: "";
-    }
     .works_box {
         flex-direction: column;
         align-items: center;
-        padding: 30px 0;
-    }
-    .works_image img {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 20px;
     }
     .works_text {
         text-align: center;
@@ -411,6 +374,20 @@ footer {
     .works_text h3 {
         font-size: 25px;
         margin: 10px 0;
+    }
+    .works_text ul {
+        flex-direction: column;
+    }
+    .works_text ul li::after {
+        content: "";
+    }
+    .works_text ul li:last-child::after {
+        content: "";
+    }
+    .works_image img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
     }
 
     /* footer */
@@ -437,6 +414,5 @@ footer {
     /* Works */
     .works_text h3 {
         font-size: 22px;
-        margin: 10px 0;
     }
 }
