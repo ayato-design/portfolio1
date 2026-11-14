@@ -278,11 +278,17 @@ footer {
         background: #FFFFFF;
         transition: .5s;
     }
-    .sm_nav_open span::before { bottom: 8px; }
-    .sm_nav_open span::after  { top: 8px; }
+    .sm_nav_open span::before { 
+        bottom: 8px;
+    }
+    .sm_nav_open span::after  { 
+        top: 8px;
+    }
 
-    /* 開いている間：真ん中を消して×に。*/
-    .sm_nav_open[aria-expanded="true"] span { background: transparent; }
+    /* 開いている間：真ん中を消して×に */
+    .sm_nav_open[aria-expanded="true"] span { 
+        background: transparent;
+    }
     .sm_nav_open[aria-expanded="true"] span::before {
         bottom: 0;
         transform: rotate(45deg);
@@ -311,7 +317,9 @@ footer {
         transition: transform .5s ease, opacity .4s ease, visibility 0s;
     }
     /* 項目タップ後のフェードアウト */
-    .sm_nav_box.is-open.is-fading { opacity: 0; }
+    .sm_nav_box.is-open.is-fading { 
+        opacity: 0;
+    }
 
     /* 項目 */
     .sm_nav_menu {
@@ -324,7 +332,9 @@ footer {
         border-top: 1px solid #000000;
         padding: 10%;
     }
-    .sm_nav_menu li:last-child { border-bottom: 1px solid #000000; }
+    .sm_nav_menu li:last-child { 
+        border-bottom: 1px solid #000000;
+    }
     .sm_nav_menu a {
         color: #000000;
         text-decoration: none;
