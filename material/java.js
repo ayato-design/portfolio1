@@ -33,3 +33,45 @@ $(document).ready(function () {
         return false;
     });
 });
+
+// ハンバーガーメニュー(元：Claude)
+const btn = document.querySelector('.sm_nav_open');
+const nav = document.querySelector('#sm_nav_box');
+const FADE_MS = 400; // CSSの opacity .4s と合わせる
+
+const setOpen = (open) => {
+  btn.setAttribute('aria-expanded', String(open));
+  btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  nav.classList.toggle('is-open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+};
+
+btn.addEventListener('click', () =>
+  setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') setOpen(false);
+});
+
+// 項目タップ → フェードアウトしてから遷移
+nav.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#') || link.target === '_blank' ||
+        e.metaKey || e.ctrlKey || e.shiftKey) {
+      setOpen(false);
+      return;
+    }
+    e.preventDefault();
+    nav.classList.add('is-fading');
+    setTimeout(() => { location.href = link.href; }, FADE_MS);
+  });
+});
+
+// 「戻る」で復元されたときの後始末
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    nav.classList.remove('is-fading');
+    setOpen(false);
+  }
+});
